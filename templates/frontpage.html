@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Detection System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            margin-top: 100px; /* Add margin to avoid overlap with navbar */
+        }
+        h1 {
+            color: #f8f9fa;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+        .img-btn {
+            margin: 20px;
+            width: 200px;
+            height: 175px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.2s ease;
+        }
+        .img-btn:hover {
+            transform: scale(1.05);
+        }
+        .btn {
+            font-size: 1.5rem;
+            padding: 10px 30px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        .detection-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='assets/logo.jpg') }}" alt="Logo" width="300"  class="d-inline-block align-text-top">
+            </a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Welcome to Real-time Detection</h1>
+        <div class="detection-container">
+            <div class="text-center">
+                <a href="/index">
+                    <img src="{{ url_for('static', filename='assets/face_mask_icon.jpeg') }}" alt="Face Mask Detection" class="img-btn">
+                </a>
+                <br>
+                <a href="/index" class="btn">Face Mask Detection</a>
+            </div>
+            <div class="text-center">
+                <a href="/webcam_detect">
+                    <img src="{{ url_for('static', filename='assets/helmet.jpeg') }}" alt="Helmet Detection" class="img-btn">
+                </a>
+                <br>
+                <a href="/webcam_detect" class="btn">Helmet Detection</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
